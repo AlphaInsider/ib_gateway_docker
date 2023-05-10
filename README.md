@@ -122,11 +122,12 @@ $ docker compose up
 - Wait 30 seconds
 - Connect to the VNC server with the following details
 
-| Setting     | Value                      |
-|-------------|----------------------------|
-| Server      | 127.0.0.1                  |
-| Username    | admin                      |   
-| Password    | (password you set in .env) |
+| Setting     | Value                        |
+|-------------|------------------------------|
+| Server      | 127.0.0.1                    |
+| Username    | admin                        |   
+| Password    | (password you set in `.env`) |
+
 **Note:** If you're still having issues connecting, try playing with the color depth settings.  
 Remmina on Linux required color depth set to *16 bpp*.
 
