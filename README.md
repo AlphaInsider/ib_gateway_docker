@@ -5,8 +5,7 @@
   </a>
 </div>
 
-# Interactive Brokers Gateway with Docker
-
+## Introduction
 An easy low maintenance way of running Interactive Brokers Gateway in docker.
 
 It includes:
@@ -19,9 +18,9 @@ a X11 virtual framebuffer to run IB Gateway Application without graphics hardwar
 a VNC server that allows to interact with the IB Gateway user interface (optional, for development / maintenance purpose).
 - [socat](https://linux.die.net/man/1/socat) a tool to accept TCP connection from non-localhost and relay it to IB Gateway from localhost (IB Gateway restricts connections to 127.0.0.1 by default).
 
-## Setup and Use
+## Getting Started
 
-### 1) Create a `docker-compose.yml` file
+### 1. Create a `docker-compose.yml` file
 ```yaml
 version: '3.4'
 
@@ -40,7 +39,7 @@ services:
       - '127.0.0.1:5900:5900'
 ```
 
-### 2) Create a `.env` file in the same directory, or set the following environment variables globally:
+### 2. Create a `.env` file in the same directory, or set the following environment variables globally:
 
 | Variable            | Description                                | Default                |
 | ------------------- | ------------------------------------------ | -----------------------|
@@ -57,7 +56,7 @@ TRADING_MODE=paper
 VNC_SERVER_PASSWORD=password
 ```
 
-### 3) Run
+### 3. Run
 ```shell
 $ docker compose up
 ```
@@ -72,7 +71,7 @@ After image is downloaded, container is started + 30s, the following ports will 
 
 **Note:** Ports are only exposed on the user's host (127.0.0.1) and are not accessible outside the user's machine.
 
-### 4) To Stop
+### 4. To Stop
 Press `Ctrl`+`c` on your keyboard, or if you're running it in the background, run:
 ```shell
 $ docker compose down
