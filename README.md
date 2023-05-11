@@ -27,7 +27,10 @@ a VNC server that allows to interact with the IB Gateway user interface (optiona
 <!-- GETTING STARTED -->
 ## Getting Started
 
-### 1. Create a `docker-compose.yml` file
+### 1. [Install Docker](https://docs.docker.com/get-docker/) on your computer
+Docker is sort of like a virtual machine for applications.
+
+### 2. Create a `docker-compose.yml` file in a new folder
 ```yaml
 version: '3.4'
 
@@ -46,7 +49,7 @@ services:
       - '127.0.0.1:5900:5900'
 ```
 
-### 2. Create a `.env` file in the same directory, or set the following environment variables globally:
+### 3. Create a `.env` file in the same folder, or set the following environment variables globally:
 
 | Variable            | Description                                | Default                |
 | ------------------- | ------------------------------------------ | -----------------------|
@@ -62,13 +65,15 @@ TWS_PASSWORD=password
 TRADING_MODE=paper
 VNC_SERVER_PASSWORD=password
 ```
+Replace *username* and *password* with your IB login credentials.
 
-### 3. Run
+### 4. Run
+Open a command line to the directory your `docker-compose.yml` file is and run:
 ```shell
 $ docker compose up
 ```
 
-After image is downloaded, container is started + 30s, the following ports will be available:
+After the image is downloaded and after 30 seconds, the following ports will be available:
 
 | Port | Description                                                |
 | ---- | ---------------------------------------------------------- |
@@ -78,7 +83,7 @@ After image is downloaded, container is started + 30s, the following ports will 
 
 **Note:** Ports are only exposed on the user's host (127.0.0.1) and are not accessible outside the user's machine.
 
-### 4. To Stop
+### 5. To Stop
 Press `Ctrl`+`c` on your keyboard, or if you're running it in the background, run:
 ```shell
 $ docker compose down
@@ -96,7 +101,7 @@ You can configure IB Gateway and IBC through their respective config files.
 | IB Gateway | jts.ini    | /root/Jts/jts.ini    | [jts.ini](https://github.com/AlphaInsider/ib_gateway_docker/blob/master/config/ibgateway/jts.ini) |
 | IBC        | config.ini | /root/ibc/config.ini | [config.ini](https://github.com/AlphaInsider/ib_gateway_docker/blob/master/config/ibc/config.ini) |   
 
-To start the container with any changes you've made, put the updated files in your project's root directory and update `docker-compose.yml` with volumes mapping them in.
+To start the container with any changes you've made, put the updated files in your project's directory and update `docker-compose.yml` with volumes mapping them in.
 
 Example:
 ```yaml
@@ -133,13 +138,13 @@ Steps:
 $ docker compose up
 ```
 - Wait 30 seconds
-- Connect to the VNC server with the following details
+- Use a VNC viewer application to connect to your local VNC server with the following details
 
-| Setting     | Value                        |
-|-------------|------------------------------|
-| Server      | 127.0.0.1                    |
-| Username    | admin                        |   
-| Password    | (password you set in `.env`) |
+| Setting     | Value                            |
+|-------------|----------------------------------|
+| Server      | 127.0.0.1                        |
+| Username    | admin                            |   
+| Password    | (VNC password you set in `.env`) |
 
 **Note:** If you're still having issues connecting, try playing with the color depth settings.  
 Remmina on Linux required color depth set to *16 bpp*.
