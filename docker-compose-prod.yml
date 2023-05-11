@@ -1,0 +1,9 @@
+version: '3.4'
+services:
+  ib_gateway:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: "alphainsider/ib_gateway:${VERSION}"
+    environment:
+      VERSION: ${VERSION}
