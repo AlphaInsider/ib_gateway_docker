@@ -8,6 +8,7 @@ RUN apt-get install --no-install-recommends --yes \
     curl \
     ca-certificates \
     unzip \
+    dos2unix \
     xvfb \
     libxslt-dev \
     libxrender1 \
@@ -36,6 +37,7 @@ COPY ./config/ibc/config.ini /root/ibc/config.ini
 
 # copy scripts
 COPY ./scripts /root/scripts
+RUN find /root/scripts -name "*.sh" -type f -exec dos2unix {} \;
 RUN chmod a+x /root/scripts/*.sh
 
 # cleanup
