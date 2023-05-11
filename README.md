@@ -5,11 +5,15 @@
   </a>
 </div>
 
+
+
+<!-- INTRODUCTION -->
 ## Introduction
 An easy low maintenance way of running Interactive Brokers Gateway in docker.
 
 It includes:
-- [IB Gateway Application](https://www.interactivebrokers.com/en/index.php?f=16457)
+- [IB Gateway Application](https://www.interactivebrokers.com/en/index.php?f=16457) -
+Interactive Brokers Gateway application for API trading.
 - [IBC Application](https://github.com/IbcAlpha/IBC) -
 to control the IB Gateway Application (simulates user input).
 - [Xvfb](https://www.x.org/releases/X11R7.6/doc/man/man1/Xvfb.1.xhtml) -
@@ -18,6 +22,9 @@ a X11 virtual framebuffer to run IB Gateway Application without graphics hardwar
 a VNC server that allows to interact with the IB Gateway user interface (optional, for development / maintenance purpose).
 - [socat](https://linux.die.net/man/1/socat) a tool to accept TCP connection from non-localhost and relay it to IB Gateway from localhost (IB Gateway restricts connections to 127.0.0.1 by default).
 
+
+
+<!-- GETTING STARTED -->
 ## Getting Started
 
 ### 1. Create a `docker-compose.yml` file
@@ -77,6 +84,9 @@ Press `Ctrl`+`c` on your keyboard, or if you're running it in the background, ru
 $ docker compose down
 ```
 
+
+
+<!-- CONFIG -->
 ## Config
 
 You can configure IB Gateway and IBC through their respective config files.
@@ -109,6 +119,10 @@ services:
       - ./jts.ini:/root/Jts/jts.ini
       - ./config.ini:/root/ibc/config.ini
 ```
+
+
+
+<!-- VNC -->
 ## VNC IB Gateway
 If you need to debug or change settings manually inside IB Gateway, you can use vnc to interact with IB Gateway GUI directly.
 
@@ -130,12 +144,30 @@ $ docker compose up
 **Note:** If you're still having issues connecting, try playing with the color depth settings.  
 Remmina on Linux required color depth set to *16 bpp*.
 
+
+
+<!-- CONTRIBUTING -->
+## Contributing
+
+Any contributions you make are **greatly appreciated**.
+
+If you have a suggestion that would make this better, please fork the repo and create a pull request. You can also simply open an issue with the tag "enhancement".
+Don't forget to give the project a star! Thanks again!
+
+
+
+<!-- LICENSE -->
 ## License
 
-This project is licensed under the terms of the MIT license.  
-The full license text is available in [LICENSE](https://github.com/AlphaInsider/ib_gateway_docker/blob/master/LICENSE).
+Distributed under the MIT License. See [LICENSE](https://github.com/AlphaInsider/ib_gateway_docker/blob/master/LICENSE) for more information.
 
-The MIT License is a short and simple permissive license with conditions
-only requiring preservation of copyright and license notices. Licensed works,
-modifications, and larger works may be distributed under different terms 
-and without source code.
+
+
+<!-- OTHER PROJECTS -->
+## Other Projects
+
+Here's a few other projects you might be interested in!
+
+- [trading_bot](https://github.com/AlphaInsider/trading_bot) - Automated IB trading bot
+
+
